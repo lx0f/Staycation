@@ -5,7 +5,8 @@ class UI:
     """Luth Andyka's personal "Safe" input class :D"""
 
     def __init__(self):
-        print("Initializing UI...\n")
+        # print("Initializing UI...\n")
+        pass
 
     def input_int(
         self, prompt: str = "", error_message: str = "An error occured"

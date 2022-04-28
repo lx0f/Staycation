@@ -20,11 +20,7 @@ ui = UI()
 
 
 if __name__ == "__main__":
-    # just for debugging
-    cli.display_actions()
-    action_id = ui.input_lambda(cli.is_valid_action, int, "Enter action id: ")
-    cli.run_action(action_id)
-
-    cli.display_actions()
-    action_id = ui.input_lambda(cli.is_valid_action, int, "Enter action id: ")
-    cli.run_action(action_id)
+    while cli.run:
+        cli.display_actions()
+        action_id = ui.input_lambda(cli.is_valid_action, int, "Enter action id: ")
+        cli.run_action(action_id)
