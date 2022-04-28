@@ -1,32 +1,15 @@
 class Record:
-    def __init__(self, pname, cname, pax, cost):
+    def __init__(self, pname: str, cname: str, number_of_pax: int, cost_per_pax: int):
         self.package_name = pname
         self.customer_name = cname
-        self.num_pax = pax
-        self.cost_per_pax = cost
+        self.number_of_pax = number_of_pax
+        self.cost_per_pax = cost_per_pax
+
+    def __repr__(self):
+        return f"Record(customer_name='{self.customer_name}', package_name='{self.package_name}', number_of_pax={self.number_of_pax}, cost_per_pax={self.cost_per_pax})"
 
 
 class RecordNode:
     def __init__(self, data: Record):
         self.data = data
         self.next: RecordNode | None = None
-
-
-class RecordQueue:
-    def __init__(self):
-        self.head = None
-        self.tail = None
-
-    def enqueue(self, data: Record):
-        new = RecordNode(data)
-        if self.head is None:
-            self.head = new
-            self.tail = new
-        else:
-            self.tail.next = new
-            self.tail = new
-
-    def dequeue(self):
-        result = self.head
-        self.head = result.next
-        return result
